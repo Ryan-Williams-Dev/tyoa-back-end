@@ -1,28 +1,13 @@
 const express = require('express');
 const router = express.Router();
+const { getPrompts, setPrompt, editPrompt, deletePrompt } = require('../controllers/promptsController')
 
-router.get('/', (req, res) => {
-  res.status(200).json({
-    message: "Get prompts"
-  })
-})
+router.get('/', getPrompts)
 
-router.post('/', (req, res) => {
-  res.status(200).json({
-    message: "Set Prompt"
-  })
-})
+router.post('/', setPrompt)
 
-router.put('/:id', (req, res) => {
-  res.status(200).json({
-    message: `edit prompt ${req.params.id}`
-  })
-})
+router.put('/:id', editPrompt)
 
-router.delete('/:id', (req, res) => {
-  res.status(200).json({
-    message: `delete prompt ${req.params.id}`
-  })
-})
+router.delete('/:id', deletePrompt)
 
 module.exports = router;
