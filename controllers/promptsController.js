@@ -49,9 +49,16 @@ const editPrompt = asyncHandler(async (req, res) => {
 // @route   Delete /api/promps/"id"
 // @access  Private
 const deletePrompt = asyncHandler(async (req, res) => {
-  res.status(200).json({
-    message: `delete prompt ${req.params.id}`
-  })
+  const prompt = await Prompt.findById(req.params.id)
+
+  if (!prompt) {
+    res.status(400)
+    throw new Error('prompt not found')
+  }
+
+  await prompt.remove()
+
+  res.status(200).json({id: req.params.id})
 })
 
 module.exports = {
