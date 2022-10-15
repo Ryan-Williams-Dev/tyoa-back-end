@@ -1,15 +1,15 @@
-const asyncHandler = require('express-async-handler')
+const asyncHandler = require("express-async-handler");
 
-const Prompt = require('../models/promptModel')
+const Prompt = require("../models/promptModel");
 
 // @desc    Get Prompts
 // @route   GET /api/prompts
 // @access  Private
 const getPrompts = asyncHandler(async (req, res) => {
-  const prompts = await Prompt.find()
+  const prompts = await Prompt.find();
 
-  res.status(200).json({prompts})
-})
+  res.status(200).json({ prompts });
+});
 
 // @desc    Set prompt
 // @route   POST /api/prompts
@@ -17,53 +17,57 @@ const getPrompts = asyncHandler(async (req, res) => {
 const setPrompt = asyncHandler(async (req, res) => {
   if (!req.body.text) {
     res.status(400);
-    throw new Error("please include a text field")
+    throw new Error("please include a text field");
   }
 
   const prompt = await Prompt.create({
-    text: req.body.text
-  })
+    text: req.body.text,
+  });
 
   res.status(200).json({
-    prompt
-  })
-})
+    prompt,
+  });
+});
 
 // @desc    Edit prompt
 // @route   PUT /api/prompts/:id
 // @access  Private
 const editPrompt = asyncHandler(async (req, res) => {
-  const prompt = await Prompt.findById(req.params.id)
+  const prompt = await Prompt.findById(req.params.id);
 
   if (!prompt) {
-    res.status(400)
-    throw new Error('prompt not found')
+    res.status(400);
+    throw new Error("prompt not found");
   }
 
-  const updatedPrompt = await Prompt.findByIdAndUpdate(req.params.id, req.body, {new: true})
+  const updatedPrompt = await Prompt.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true }
+  );
 
-  res.status(200).json(updatedPrompt)
-})
+  res.status(200).json(updatedPrompt);
+});
 
 // @desc    Delete prompt
 // @route   Delete /api/promps/"id"
 // @access  Private
 const deletePrompt = asyncHandler(async (req, res) => {
-  const prompt = await Prompt.findById(req.params.id)
+  const prompt = await Prompt.findById(req.params.id);
 
   if (!prompt) {
-    res.status(400)
-    throw new Error('prompt not found')
+    res.status(400);
+    throw new Error("prompt not found");
   }
 
-  await prompt.remove()
+  await prompt.remove();
 
-  res.status(200).json({id: req.params.id})
-})
+  res.status(200).json({ id: req.params.id });
+});
 
 module.exports = {
   getPrompts,
   setPrompt,
   editPrompt,
-  deletePrompt
-}
+  deletePrompt,
+};
