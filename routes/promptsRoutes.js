@@ -7,7 +7,9 @@ const {
   deletePrompt,
 } = require("../controllers/promptsController");
 
-router.route("/").get(getPrompts).post(setPrompt);
-router.route("/:id").put(editPrompt).delete(deletePrompt);
+const { protect } = require("../middleware/authMiddleware");
+
+router.route("/").get(protect, getPrompts).post(protect, setPrompt);
+router.route("/:id").put(protect, editPrompt).delete(protect, deletePrompt);
 
 module.exports = router;

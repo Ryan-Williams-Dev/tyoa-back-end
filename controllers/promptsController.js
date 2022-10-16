@@ -1,12 +1,13 @@
 const asyncHandler = require("express-async-handler");
 
 const Prompt = require("../models/promptModel");
+const User = require("../models/userModel");
 
 // @desc    Get Prompts
 // @route   GET /api/prompts
 // @access  Private
 const getPrompts = asyncHandler(async (req, res) => {
-  const prompts = await Prompt.find();
+  const prompts = await Prompt.find({ user: req.user.id });
 
   res.status(200).json({ prompts });
 });
@@ -40,6 +41,18 @@ const editPrompt = asyncHandler(async (req, res) => {
     throw new Error("prompt not found");
   }
 
+  const user = await User.findById(req.user.id);
+
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
+  }
+
+  if (prompt.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error("User not authorized");
+  }
+
   const updatedPrompt = await Prompt.findByIdAndUpdate(
     req.params.id,
     req.body,
@@ -58,6 +71,18 @@ const deletePrompt = asyncHandler(async (req, res) => {
   if (!prompt) {
     res.status(400);
     throw new Error("prompt not found");
+  }
+
+  const user = await User.findById(req.user.id);
+
+  if (!user) {
+    res.status(401);
+    throw new Error("User not found");
+  }
+
+  if (prompt.user.toString() !== user.id) {
+    res.status(401);
+    throw new Error("User not authorized");
   }
 
   await prompt.remove();
