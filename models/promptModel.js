@@ -11,6 +11,7 @@ const promptSchema = mongoose.Schema(
       type: String,
       required: [true, "Please include a text value"],
     },
+    default: Boolean,
   },
   {
     timestamps: true,
