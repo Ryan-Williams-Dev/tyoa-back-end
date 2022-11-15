@@ -15,12 +15,6 @@ const userSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a password"],
     },
-    prompts: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Prompt",
-      },
-    ],
   },
   {
     timestamps: true,

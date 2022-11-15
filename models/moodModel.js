@@ -5,9 +5,15 @@ const moodSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  oppositeMood: {
+  type: {
+    type: String,
+    enum: ["good", "bad"],
+    required: true,
+  },
+  opposite: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Mood",
+    required: true,
   },
 });
 

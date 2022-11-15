@@ -6,10 +6,16 @@ const responseSchema = mongoose.Schema(
       type: String,
       required: [true, "Please add a response"],
     },
-    prompt: {
+    moods: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Mood",
+        required: true,
+      },
+    ],
+    user: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
-      ref: "Prompt",
+      ref: "User",
     },
   },
   {
