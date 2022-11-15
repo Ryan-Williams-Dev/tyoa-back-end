@@ -16,4 +16,4 @@ const setResponse = asyncHandler(async (req, res) => {
   res.status(200);
 });
 
-module.exports = {};
+module.exports = { getResponse, setResponse };

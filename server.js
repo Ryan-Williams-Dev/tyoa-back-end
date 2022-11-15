@@ -14,6 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/prompts", require("./routes/promptsRoutes"));
+app.use("/api/moods", require("./routes/moodsRoutes"));
 
 app.use(errorHandler);
 
