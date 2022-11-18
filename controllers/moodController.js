@@ -3,22 +3,15 @@ const asyncHandler = require("express-async-handler");
 const Mood = require("../models/moodModel");
 
 // @desc    Get Moods
-// @route   GET /api/Moods/:type
+// @route   GET /api/moods/:type
 // @access  Public
 const getMoods = asyncHandler(async (req, res) => {
-  const type = req.params.type;
+  const moods = await Mood.find();
 
-  if (type !== "bad" && type !== "good") {
-    res.status(400);
-    throw new Error("type param must be either 'bad' or 'good'");
-  }
-
-  const moods = Mood.find({ type });
-
-  res.status(200);
+  res.status(200).json(moods);
 });
 // @desc    Set Mood
-// @route   POST /api/Mood/
+// @route   POST /api/mood/
 // @access  Private
 const setMood = asyncHandler(async (req, res) => {
   res.status(200);
