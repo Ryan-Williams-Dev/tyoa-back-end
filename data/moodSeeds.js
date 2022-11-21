@@ -1,3 +1,7 @@
+// key 'promptFormat' needs to work in context of this question
+// "What would you say to someone who was struggling with feelings of... ?".
+// If left empty the prompt will use the regular 'bad' word
+
 const seedMoods = [
   {
     good: "Hope",
@@ -30,6 +34,7 @@ const seedMoods = [
   {
     good: "Fulfilled",
     bad: "Empty",
+    promptFormat: "emptiness",
   },
   {
     good: "Optimistism",
@@ -42,18 +47,22 @@ const seedMoods = [
   {
     good: "Confident",
     bad: "Unconfident",
+    promptFormat: "unconfidence",
   },
   {
     good: "Loved",
     bad: "Unloved",
+    promptFormat: "being unloved",
   },
   {
     good: "Impressed",
     bad: "Underwhelmed",
+    promptFormat: "being underwhelmed",
   },
   {
     good: "Successful",
     bad: "Innadequate",
+    promptFormat: "innadequacy",
   },
 ];
 

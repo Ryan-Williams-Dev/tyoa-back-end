@@ -10,6 +10,9 @@ const moodSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  promptFormat: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("Mood", moodSchema);
