@@ -6,7 +6,7 @@ const {
 } = require("../controllers/responseController");
 const { protect } = require("../middleware/authMiddleware");
 
-router.get("/", getResponse);
+router.get("/", protect, getResponse);
 router.post("/", protect, setResponse);
 
 module.exports = router;
