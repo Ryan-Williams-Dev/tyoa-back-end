@@ -6,7 +6,7 @@ const {
 } = require("../controllers/responseController");
 const { protect } = require("../middleware/authMiddleware");
 
-router.get("/:selectedMoods", getResponse);
-router.post("/:selectedMoods", protect, setResponse);
+router.get("/", getResponse);
+router.post("/", protect, setResponse);
 
 module.exports = router;
