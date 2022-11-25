@@ -7,17 +7,20 @@ const Response = require("../models/responseModel");
 // @route   GET /api/response/
 // @access  Private
 const getResponse = asyncHandler(async (req, res) => {
-  const { selectedMoods } = req.body;
+  const { selectedMoods } = req.query;
   const userId = req.user.id;
+
+  if (!selectedMoods) {
+    res.status(400);
+    throw new Error("Please include moods");
+  }
 
   try {
     const response = await findReleventResponse(userId, selectedMoods);
-    console.log(response);
     res.status(200).json({ response });
   } catch (error) {
     res.status(500).json({ error });
   }
-  res.status(200);
 });
 
 // @desc    Set Response
