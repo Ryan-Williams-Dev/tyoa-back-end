@@ -64,6 +64,16 @@ const seedMoods = [
     bad: "Innadequate",
     promptFormat: "innadequacy",
   },
+  {
+    good: "Acceptance",
+    bad: "Resentment",
+    promptFormat: "resentful",
+  },
+  {
+    good: "Safe",
+    bad: "Unsafe",
+    promptFormat: "vulnerability",
+  },
 ];
 
 module.exports = seedMoods;

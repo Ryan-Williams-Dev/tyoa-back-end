@@ -1,31 +1,46 @@
 const Response = require("../models/responseModel");
-const mode = require("../utils/mode");
+const mongoose = require("mongoose");
+
+const ObjectId = mongoose.Types.ObjectId;
 
 const findReleventResponse = async (userId, selectedMoods) => {
-  const responses = [];
+  const selectedMoodsAsObjectIds = selectedMoods.map((id) => {
+    return new ObjectId(id);
+  });
 
-  // First check if user has a relevent piece of advice
-  for (const moodId of selectedMoods) {
-    const matchedResponses = await Response.find({
-      user: userId,
-      moods: moodId,
-    });
-    responses.push(...matchedResponses);
+  const userIdAsObjectId = new ObjectId(userId);
+
+  console.log("meep");
+
+  try {
+    let responses = await Response.aggregate([
+      { $match: { user: userIdAsObjectId } },
+      {
+        $addFields: {
+          weight: {
+            $size: { $setIntersection: ["$moods", selectedMoodsAsObjectIds] },
+          },
+        },
+      },
+      { $sort: { weight: -1 } },
+    ]);
+
+    if (responses.length === 0) {
+      responses = await Response.aggregate([
+        {
+          $addFields: {
+            weight: {
+              $size: { $setIntersection: ["$moods", selectedMoodsAsObjectIds] },
+            },
+          },
+        },
+        { $sort: { weight: -1 } },
+      ]);
+    }
+    return responses[0];
+  } catch (error) {
+    throw new Error(error);
   }
-
-  if (responses.length > 0) {
-    return mode(responses);
-  }
-
-  // If user does not have relevent piece of advice, search all responses
-  for (const moodId of selectedMoods) {
-    const matchedResponses = await Response.find({
-      moods: moodId,
-    });
-    responses.push(...matchedResponses);
-  }
-
-  return mode(responses);
 };
 
 module.exports = findReleventResponse;
