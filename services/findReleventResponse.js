@@ -23,6 +23,7 @@ const findReleventResponse = async (userId, selectedMoods) => {
           },
         },
       },
+      { $match: { weight: { $gt: 0 } } },
       { $sort: { weight: -1 } },
     ]);
 
@@ -36,6 +37,7 @@ const findReleventResponse = async (userId, selectedMoods) => {
             },
           },
         },
+        { $match: { weight: { $gt: 0 } } },
         { $sort: { weight: -1 } },
       ]);
     }
@@ -47,6 +49,7 @@ const findReleventResponse = async (userId, selectedMoods) => {
   if (responses.length === 1) return responses[0];
   if (responses.length <= 0) throw new Error("No responses found");
 
+  // Sort into only the tied closest matches, and pick randomly from the winners
   const bestMatches = [];
   if (responses.length > 1) {
     for (let i = 0; i < responses.length; i++) {
