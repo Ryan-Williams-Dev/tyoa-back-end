@@ -10,10 +10,11 @@ const findReleventResponse = async (userId, selectedMoods) => {
 
   const userIdAsObjectId = new ObjectId(userId);
 
-  console.log("meep");
+  let responses = [];
 
   try {
-    let responses = await Response.aggregate([
+    // First check responses submitted by user for match
+    responses = await Response.aggregate([
       { $match: { user: userIdAsObjectId } },
       {
         $addFields: {
@@ -25,6 +26,7 @@ const findReleventResponse = async (userId, selectedMoods) => {
       { $sort: { weight: -1 } },
     ]);
 
+    // Check for closest match amongst all users if no matches from user
     if (responses.length === 0) {
       responses = await Response.aggregate([
         {
@@ -37,10 +39,28 @@ const findReleventResponse = async (userId, selectedMoods) => {
         { $sort: { weight: -1 } },
       ]);
     }
-    return responses[0];
   } catch (error) {
     throw new Error(error);
   }
+
+  // Early return for one or empty response
+  if (responses.length === 1) return responses[0];
+  if (responses.length <= 0) throw new Error("No responses found");
+
+  const bestMatches = [];
+  if (responses.length > 1) {
+    for (let i = 0; i < responses.length; i++) {
+      const curr = responses[i];
+      const next = responses[i + 1];
+      bestMatches.push(curr);
+      if (curr.weight > next.weight) {
+        break;
+      }
+    }
+  }
+
+  const result = bestMatches[Math.floor(Math.random() * bestMatches.length)];
+  return result;
 };
 
 module.exports = findReleventResponse;
