@@ -5,7 +5,7 @@
 const seedMoods = [
   {
     good: "Hope",
-    bad: "Fear",
+    bad: "Despair",
   },
   {
     good: "Joy",
@@ -66,13 +66,12 @@ const seedMoods = [
   },
   {
     good: "Acceptance",
-    bad: "Resentment",
-    promptFormat: "resentful",
+    bad: "Fear",
   },
   {
     good: "Safe",
     bad: "Unsafe",
-    promptFormat: "vulnerability",
+    promptFormat: "unsafety",
   },
 ];
 
