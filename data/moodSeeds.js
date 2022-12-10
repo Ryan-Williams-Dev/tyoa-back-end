@@ -2,7 +2,7 @@
 // "What would you say to someone who was struggling with feelings of... ?".
 // If left empty the prompt will use the regular 'bad' word
 
-const seedMoods = [
+const moodSeeds = [
   {
     good: "Hope",
     bad: "Despair",
@@ -75,4 +75,4 @@ const seedMoods = [
   },
 ];
 
-module.exports = seedMoods;
+module.exports = moodSeeds;

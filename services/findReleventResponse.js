@@ -49,10 +49,10 @@ const findReleventResponse = async (userId, selectedMoods) => {
   // Early return for one or empty response
   if (responses.length === 1) return responses[0];
   if (responses.length <= 0) {
-    throw new Error("No responses found");
+    return { text: "" };
   }
 
-  // Sort into only the tied closest matches, and pick randomly from the winners
+  // Take only the tied closest matches, and pick randomly from the winners
   const bestMatches = [];
   if (responses.length > 1) {
     for (let i = 0; i < responses.length; i++) {
