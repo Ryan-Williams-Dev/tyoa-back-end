@@ -12,11 +12,11 @@ const responseSeeds = [
     mood: "Anger",
   },
   {
-    text: "",
+    text: "Look, we all do stupid stuff. We all let other people—and ourselves—down sometimes. We've all had regrets. But just because you fucked up doesn't mean you are a fuck up. You can learn from mistakes, no matter how terrible they are. Failures and mistakes have value. They are also inevitable. None of us are necessarily terrible people for committing them. So work to replace “I am bad” with “I did something bad.”",
     mood: "Shame",
   },
   {
-    text: "",
+    text: "No one is all good or all bad, whether that is yourself for someone you hate. Nuance and empathy are antidotes to irrational thoughts. It's important to understand that no one is all good or all bad. Putting yourself in someone else's shoes, while not always easy, can go a long way toward increasing empathy and reducing hate. Just as you have your reasons for your beliefs and behaviors, so do others.",
     mood: "Hate",
   },
   {
