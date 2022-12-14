@@ -20,7 +20,7 @@ const responseSeeds = [
     mood: "Hate",
   },
   {
-    text: "",
+    text: "You've already noticed you are feeling disgust and that's a great first step. Don't let your feelings control your thinking, try not to be judgemental. People generally do not do things they feel are wrong, and certainly not guilt-free. People have usually reasoned their way into acting a certain way, how you reason things and how they reason things are just different.",
     mood: "Disgust",
   },
   {
