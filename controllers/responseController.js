@@ -11,7 +11,6 @@ const getResponse = asyncHandler(async (req, res) => {
   const userId = req.user.id;
 
   if (!selectedMoods) {
-    res.status(400);
     throw new Error("Please include moods");
   }
 
@@ -19,6 +18,7 @@ const getResponse = asyncHandler(async (req, res) => {
     const response = await findReleventResponse(userId, selectedMoods);
     res.status(200).json({ response });
   } catch (error) {
+    console.log(error);
     res.status(500).json({ error });
   }
 });

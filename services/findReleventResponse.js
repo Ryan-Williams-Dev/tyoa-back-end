@@ -59,7 +59,7 @@ const findReleventResponse = async (userId, selectedMoods) => {
       const curr = responses[i];
       const next = responses[i + 1];
       bestMatches.push(curr);
-      if (curr.weight > next.weight) {
+      if (!next || curr.weight > next.weight) {
         break;
       }
     }
