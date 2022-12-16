@@ -24,19 +24,19 @@ const responseSeeds = [
     mood: "Disgust",
   },
   {
-    text: "",
+    text: "If you're feeling bored, think of something you have always wanted to do or be able to do, such as being able to speak a foreign language or any other skill. What is the smallest step you can take to start on that journey. Think about how to get started, and begin to get excited and curious about the topic. Take that first step and visualise achieving the target.",
     mood: "Boredom",
   },
   {
-    text: "",
+    text: "Stop looking “out there” for a sense of purpose. Your purpose springs forth from your uniqueness. It's not something that floats around the earth independently like a cloud, waiting for you to find it. If you don't have a strong sense of who you are, it's can be hard to feel in touch with your purpose. You are someone in particular. You have a story, of which you're the star.",
     mood: "Empty",
   },
   {
-    text: "",
+    text: "Both pessimism and optimism can be self-fulfilling prophecies. Fortune favours the bold, if you always assume the worst you leave yourself no motivation to take the shot. If you try to assume a positive outcome and take actions towards that reality, a positive outcome becomes more likely simply because you believe it to be so. Putting yourself in the way of luck is not ignoring the possibility of failure.",
     mood: "Pessimisim",
   },
   {
-    text: "",
+    text: "Taking care of yourself is important, and it's also important to stick up for what you want and what you believe in. When these desires and beliefs come at the cost of others, however, they cross a line that only grows to leave us isolated and defeating; hating ourselves and believing the worst in both ourselves and the people around us. When we’re only able to focus on ourselves, it causes us to revert to a type of tunnel vision that completely obscures our path.",
     mood: "Selfishness",
   },
   {
