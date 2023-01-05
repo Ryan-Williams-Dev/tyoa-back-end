@@ -36,15 +36,15 @@ const responseSeeds = [
     mood: "Pessimisim",
   },
   {
-    text: "Taking care of yourself is important, and it's also important to stick up for what you want and what you believe in. When these desires and beliefs come at the cost of others, however, they cross a line that only grows to leave us isolated and defeating; hating ourselves and believing the worst in both ourselves and the people around us. When we’re only able to focus on ourselves, it causes us to revert to a type of tunnel vision that completely obscures our path.",
+    text: "Taking care of yourself is important, and it's also important to stick up for what you want and what you believe in. When these desires and beliefs come at the cost of others, however, they cross a line that only grows to leave us isolated and defeating; hating ourselves and believing the worst in both ourselves and the people around us. When we're only able to focus on ourselves, it causes us to revert to a type of tunnel vision that completely obscures our path.",
     mood: "Selfishness",
   },
   {
-    text: "",
+    text: "Accept who you are and where you are in life, personal growth is made by driving through uncertainty. Confidence is not believing everything will be perfect. Confidence is knowing you will give your best, while being comfortable with the fact that it may not be enough. There is still value in falling short of goals. Trying and failing gets you closer to your goals than not trying at all. Failures are valuable, don't waste them.",
     mood: "Unconfident",
   },
   {
-    text: "",
+    text: "You are worthy of love and respect, ",
     mood: "Unloved",
   },
   {
