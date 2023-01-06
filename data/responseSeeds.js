@@ -44,7 +44,7 @@ const responseSeeds = [
     mood: "Unconfident",
   },
   {
-    text: "You are worthy of love and respect, ",
+    text: "You are worthy of love and respect, that begins with loving yourself. Love is not just a feeling, it is a action. Often the action of loving can help foster the feeling. Take actions to care for yourself and be respected by the only person you have any control of. After you treat yourself with love, you can make sure you are receiving the love you desire from those in your life who are close to you.",
     mood: "Unloved",
   },
   {
