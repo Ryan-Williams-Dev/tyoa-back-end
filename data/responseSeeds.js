@@ -48,11 +48,11 @@ const responseSeeds = [
     mood: "Unloved",
   },
   {
-    text: "",
+    text: "Understand that only certain things in life are under your control. If you are feeling underwhelmed with things that are outside of your control; let go, and refocus on things within your circle of control. If you are feeling underwhelmed with something you have control over, realize that it is half the battle. This is an opportunity to exercise agency over your life and change your routine to include things that energize you intellectually or otherwise.",
     mood: "Underwhelmed",
   },
   {
-    text: "",
+    text: " If we're falling short of our expectations and ideals, it may be that we have unrealistic expectations of ourselves and what we can do. If you're feeling inadequate in a particular task, take the time to build your skills. Over time, as you build self-efficacy, you'll feel more competent and capable.",
     mood: "Innadequate",
   },
   {
