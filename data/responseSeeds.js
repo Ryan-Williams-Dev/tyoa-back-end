@@ -52,15 +52,15 @@ const responseSeeds = [
     mood: "Underwhelmed",
   },
   {
-    text: " If we're falling short of our expectations and ideals, it may be that we have unrealistic expectations of ourselves and what we can do. If you're feeling inadequate in a particular task, take the time to build your skills. Over time, as you build self-efficacy, you'll feel more competent and capable.",
+    text: "If we're falling short of our expectations and ideals, it may be that we have unrealistic expectations of ourselves and what we can do. If you're feeling inadequate in a particular task, take the time to build your skills. Over time, as you build self-efficacy, you'll feel more competent and capable.",
     mood: "Innadequate",
   },
   {
-    text: "",
+    text: "The only way to deal with fear is to face it. Avoiding our fears only prevents us from moving forward—it makes us anxious.  Fear causes us to notice and remember negative events, which reinforces our sense that the world is a scary place. We can work to change that by noticing what is positive—the joy when we see someone we love, the pleasure of a sunny day, the beauty in nature, the fun of an outing, and the humour in a situation.",
     mood: "Fear",
   },
   {
-    text: "",
+    text: "Surround yourself with the people who make you feel supported and safe. Make it a point to see and speak with the people who make you feel seen, heard, and supported. Go for coffee with a friend, go for a walk with a neighbor or arrange a family dinner.",
     mood: "Unsafe",
   },
 ];
